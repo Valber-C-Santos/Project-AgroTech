@@ -47,7 +47,7 @@ public class FertilizeController {
    * Get all fertilize.
    */
   @GetMapping
-  @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+  @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
   public List<FertilizeDto> getAllCrops() {
     List<Fertilizer> allCrops = fertilizeService.findAll();
     return allCrops.stream()

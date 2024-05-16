@@ -40,7 +40,7 @@ public class CropController {
    * Get all Crops.
    */
   @GetMapping
-  @PreAuthorize("hasAuthority('ROLE_ADMIN') or hasAuthority('ROLE_MANAGER')")
+  @PreAuthorize("hasAnyRole('ROLE_ADMIN') or hasAuthority('ROLE_MANAGER')")
   public List<CropDto> getAllCrops() {
     List<Crop> allCrops = cropService.findAll();
     return allCrops.stream()

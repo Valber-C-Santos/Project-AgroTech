@@ -69,7 +69,7 @@ public class FarmController {
    */
 
   @GetMapping
-  @PreAuthorize("hasAuthority('ROLE_ADMIN')"
+  @PreAuthorize("hasAnyRole('ROLE_ADMIN')"
       + " or hasAuthority('ROLE_MANAGER') or hasAuthority('ROLE_USER')")
   public List<FarmDto> getAllfarms() {
     List<Farm> allFarms = farmService.findAll();
