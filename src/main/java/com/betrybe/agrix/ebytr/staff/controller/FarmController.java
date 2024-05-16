@@ -69,7 +69,8 @@ public class FarmController {
    */
 
   @GetMapping
-  @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER', 'ROLE_ADMIN')")
+  @PreAuthorize("hasAuthority('ROLE_ADMIN')"
+      + " or hasAuthority('ROLE_MANAGER') or hasAuthority('ROLE_USER')")
   public List<FarmDto> getAllfarms() {
     List<Farm> allFarms = farmService.findAll();
     return allFarms.stream()
