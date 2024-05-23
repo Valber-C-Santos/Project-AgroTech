@@ -1,6 +1,5 @@
 package com.betrybe.agrix.ebytr.staff.entity;
 
-
 import com.betrybe.agrix.ebytr.staff.security.Role;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
